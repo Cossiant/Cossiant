@@ -184,15 +184,6 @@
 
 ---
 
-## GitHub 公开数据
-
-<div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=Cossiant&show_icons=true&theme=graywhite&hide_border=true&locale=cn&rank_icon=github" alt="GitHub stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Cossiant&layout=compact&theme=graywhite&hide_border=true&locale=cn&langs_count=8" alt="Top languages" />
-</div>
-
----
-
 ## 联系方式
 
 [![GitHub](https://img.shields.io/badge/GitHub-Cossiant-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Cossiant)
