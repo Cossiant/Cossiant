@@ -29,7 +29,7 @@
 | 电源自动化测试 | 自动化测试方案设计、测试流程编排、数据采集与判定、产测系统开发 |
 | 上位机开发 | Qt 5 / Qt 6 Widgets、C++11 / C++17、qmake / CMake、QSerialPort、QtNetwork、QAxObject、QXlsx、ElaWidgetTools |
 | 仪器通信 | SCPI、Modbus RTU、RS-232 / RS-485、TCP、CAN（ZLG）、GPIB（NI-VISA）、协议解析与响应校验 |
-| 嵌入式开发 | STM32F1 / STM32G4、HAL、标准外设库、FreeRTOS 10.4.6、CMSIS-RTOS2、Keil MDK、CMake |
+| 嵌入式开发 | STM32F1 / STM32G4、HAL、标准外设库、FreeRTOS 10.3 / 10.4、CMSIS-RTOS2、Keil MDK、CMake |
 | 桌面与脚本 | C# 12 / .NET 10 / WPF、WPF-UI、Python、PySide6、OpenCV、Node.js、Electron |
 | 工程工具 | Git / GitHub、Linux Shell、PowerShell、Batch、VS Code、Qt Creator、Rider、IntelliJ IDEA |
 
@@ -57,7 +57,7 @@
 **嵌入式与实时系统**
 
 ![STM32](https://img.shields.io/badge/STM32-F1_%2F_G4-03234B?style=flat-square&logo=stmicroelectronics&logoColor=white)
-![FreeRTOS](https://img.shields.io/badge/FreeRTOS-10.4.6-8CC84B?style=flat-square)
+![FreeRTOS](https://img.shields.io/badge/FreeRTOS-10.3_%2F_10.4-8CC84B?style=flat-square)
 ![Keil MDK](https://img.shields.io/badge/Keil_MDK-0091BD?style=flat-square&logo=arm&logoColor=white)
 ![CMake](https://img.shields.io/badge/CMake-064F8C?style=flat-square&logo=cmake&logoColor=white)
 
@@ -104,23 +104,23 @@
   - 支持 AN3.0 HEX 帧解析、异常统计、错误命令导出与多线程任务队列；
   - 使用 QXlsx 进行 Excel 数据处理，ElaWidgetTools 实现 Fluent 风格界面。
 
-### STM32F103ZET6_FreeRTOS_Project
+### STM32-HAL-Cmake-template
 
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Cossiant/STM32F103ZET6_FreeRTOS_Project)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Cossiant/STM32-HAL-Cmake-template)
 ![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=white)
-![STM32](https://img.shields.io/badge/STM32-F103ZET6-03234B?style=flat-square&logo=stmicroelectronics&logoColor=white)
-![FreeRTOS](https://img.shields.io/badge/FreeRTOS-10.4.6-8CC84B?style=flat-square)
-![Keil MDK](https://img.shields.io/badge/Keil_MDK-0091BD?style=flat-square&logo=arm&logoColor=white)
-![BSD-3-Clause](https://img.shields.io/badge/License-BSD--3--Clause-2E8B57?style=flat-square)
+![STM32](https://img.shields.io/badge/STM32-F103C8T6-03234B?style=flat-square&logo=stmicroelectronics&logoColor=white)
+![CMake](https://img.shields.io/badge/CMake-3.22%2B-064F8C?style=flat-square&logo=cmake&logoColor=white)
+![FreeRTOS](https://img.shields.io/badge/FreeRTOS-10.3.1-8CC84B?style=flat-square)
+![MIT](https://img.shields.io/badge/License-MIT-2E8B57?style=flat-square)
 
-- 仓库：<https://github.com/Cossiant/STM32F103ZET6_FreeRTOS_Project>
-- 概述：基于 STM32F103ZET6、HAL 与 FreeRTOS 的嵌入式工程，BSD-3-Clause License。
+- 仓库：<https://github.com/Cossiant/STM32-HAL-Cmake-template>
+- 概述：基于 STM32F103C8T6、HAL 与 FreeRTOS 的 CMake 工程模板，MIT License，可直接 clone 作为新项目起点。
 - 主要功能：
-  - FreeRTOS 10.4.6 + CMSIS-RTOS2；
-  - ILI9341 TFT-LCD（320×240，16-bit FSMC 驱动）；
-  - LED 手动 / 自动模式；
-  - DMA + FreeRTOS 队列串口通信（115200）；
-  - 提供 Keil MDK 与 CMake / GCC ARM 两种构建方式。
+  - STM32CubeMX 生成的 CMake 标准工程（Toolchain = CMake），重新生成不会覆盖用户维护的顶层构建脚本与 `USER CODE` 区域；
+  - HAL 1.1.10 + FreeRTOS V10.3.1 + CMSIS-RTOS2，源码随仓库提供，支持离线构建；
+  - CMake + Ninja + arm-none-eabi-gcc，Debug / Release 双预设，构建后自动生成 `.hex` / `.bin` / `.map` 与 `compile_commands.json`；
+  - TIM4 作为 HAL 时基，与 FreeRTOS 使用的 SysTick 相互独立；
+  - 提供 CLion + OpenOCD 下载调试配置，以及完整的 README、定制指南与 FAQ。
 
 ### 黑龙江省大学生电子设计大赛项目
 
